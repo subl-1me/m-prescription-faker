@@ -1,0 +1,5 @@
+*.docx
+*.tmp
+controllers/prescription_reader.py
+models/
+__pycache__/
