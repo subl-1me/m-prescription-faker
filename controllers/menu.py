@@ -13,7 +13,21 @@ def init_home_menu():
 
     result = prompt(menu)
     action = result[HOME_MENU_ACTION]
-    print(action)
+    return action
+
+def ask_for_prop():
+    propPrompt = [
+        {
+            "type": "list",
+            "message": "Select an option to modify",
+            "name": "PROP_SELECTION",
+            "choices": ["Name", "CURP", "NSS No.", "Birth date", "UMF No.", "Shift", "State", "Office No."]
+        }
+    ]
+
+    result = prompt(propPrompt)
+    selection = result["PROP_SELECTION"]
+    return selection
 
 def process_menu_choice(choice):
     print(choice)
