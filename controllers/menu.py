@@ -29,5 +29,48 @@ def ask_for_prop():
     selection = result["PROP_SELECTION"]
     return selection
 
+def askForProfile():
+    profileQuestions = [
+        {
+            "type": "input",
+            "message": "Type your name",
+            "name": "name",
+        },
+                {
+            "type": "input",
+            "message": "Type your NSS",
+            "name": "nss",
+        },
+                {
+            "type": "input",
+            "message": "Type your CURP",
+            "name": "curp",
+        },
+                {
+            "type": "input",
+            "message": "Type your birth date",
+            "name": "bdate",
+        },
+                {
+            "type": "input",
+            "message": "Type UMF no.",
+            "name": "umf",
+        },
+                {
+            "type": "input",
+            "message": "Type unity no.",
+            "name": "unity",
+        },
+                {
+            "type": "list",
+            "message": "Enter shift type",
+            "name": "shift",
+            "choices": ["MATUTINO", "VESPERTINO"]
+        }
+    ]
+
+    result = prompt(profileQuestions)
+    return result
+
 def process_menu_choice(choice):
     print(choice)
