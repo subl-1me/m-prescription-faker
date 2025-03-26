@@ -1,9 +1,10 @@
 from controllers.menu import init_home_menu, ask_for_prop, askForProfile
 from const import CREATE_PRESCRIPTION_OPT, MODIFY_MEDICAL_PROFILE_OPT, SHOW_MEDICAL_PROFILE_OPT, SET_MEDICAL_PROFILE
-from models.medical_profile import MedicalProfile
+from controllers.actions import Actions
 
 def main():
     profile = None
+    actions = Actions()
 
     menu_actions = {
         1: CREATE_PRESCRIPTION_OPT,
@@ -20,16 +21,11 @@ def main():
         if selection == 1:
             menu_actions[selection]() # Create medical document (.word)
         elif selection == 2:
-            #ask for profile information
-            profile_data = askForProfile()
-            profile = MedicalProfile()
+            profile = menu_actions[selection]() # Set medical profile
         elif selection == 3:
-            profile.show()
-            # Ask for prop to modify
-            prop = ask_for_prop()
-            print(prop)
+            menu_actions[selection](profile)
         elif selection == 4: 
-            profile.show()
+            menu_actions[selection](profile)
         else:
             print(f'Invalid option.')
 
