@@ -1,9 +1,11 @@
 class MedicalProfile:
-    def __init__(self, fullName, curpCode, address, date):
-        self.fullname = fullName
-        self.curpCode = curpCode
-        self.address = address
-        self.date = date
+    def __init__(self, name, curp, bdate, umf_no, unity_no, shift):
+        self.name = name
+        self.curp = curp
+        self.bdate = bdate
+        self.umf_no = umf_no
+        self.unity_no = unity_no
+        self.shift = shift
     
     def get(self):
         print('Printing profile...')
@@ -15,10 +17,12 @@ class MedicalProfile:
     def show(self):
         print("\n----------")
         print(' CURRENT PROFILE ')
-        print("Name: " + self.fullname);
-        print("CURP: " + self.curpCode);
-        print("Address: " + self.address);
-        print("Date: " + self.date);
+        print("Name: " + self.name);
+        print("CURP: " + self.curp);
+        print("Birthdate: " + self.bdate);
+        print("UMF: " + self.umf_no);
+        print("Unity: " + self.unity_no);
+        print("Shift: " + self.shift);
         print("----------\n")
     
     

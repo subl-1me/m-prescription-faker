@@ -13,9 +13,8 @@ class Actions:
     @staticmethod
     def set_medical_profile():
         response = Menu.show_create_profile()
-        profile = MedicalProfile(response.fullName, response.curpCode, response.address, response.date)
-        logger.debug(profile)
-        return profile
+        profile = MedicalProfile(response['name'], response['curp'], response['bdate'], response['umf_no'], response['unity_no'], response['shift'])
+        return profile  
     
     @staticmethod
     def modify_medical_profile(profile):
@@ -23,4 +22,4 @@ class Actions:
 
     @staticmethod
     def show_medical_profile(profile):
-        logger.info('Creating document...')
+        profile.show()

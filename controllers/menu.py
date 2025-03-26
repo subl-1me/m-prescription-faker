@@ -48,12 +48,12 @@ class Menu():
                     {
                 "type": "input",
                 "message": "Type UMF no.",
-                "name": "umf",
+                "name": "umf_no",
             },
                     {
                 "type": "input",
                 "message": "Type unity no.",
-                "name": "unity",
+                "name": "unity_no",
             },
                     {
                 "type": "list",
