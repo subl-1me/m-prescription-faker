@@ -13,10 +13,9 @@ def main():
         # transform selection to func name
         parsedSelection = str.lower(selection).replace(' ', '_')
         if selection == CREATE_PRESCRIPTION_OPT:
-            # print(getattr(Actions, parsedSelection))
-            getattr(Actions, parsedSelection) # Create medical document (.word)
+            getattr(Actions, parsedSelection)() # Create medical document (.word)
         elif selection == SET_MEDICAL_PROFILE:
-            getattr(Actions, parsedSelection) # Set medical profile
+            getattr(Actions, parsedSelection)() # Set medical profile
         elif selection == MODIFY_MEDICAL_PROFILE_OPT:
             getattr(Actions, parsedSelection)(profile) # Modify a profile attribute
         elif selection == SHOW_MEDICAL_PROFILE_OPT: 

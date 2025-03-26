@@ -3,6 +3,8 @@ from const import MAIN_MENU_SKELETON, HOME_MENU_ACTION
 import pyfiglet
 
 class Menu():
+
+    @staticmethod
     def show_home_menu():
         title = pyfiglet.figlet_format('Medical Prescription Faker')
         print(title)
@@ -20,7 +22,7 @@ class Menu():
         action = result[HOME_MENU_ACTION]
         return action
 
-
+    @staticmethod
     def show_create_profile():
         profileQuestions = [
             {
@@ -64,6 +66,7 @@ class Menu():
         result = prompt(profileQuestions)
         return result
 
+    @staticmethod
     def ask_for_prop():
         propPrompt = [
             {
