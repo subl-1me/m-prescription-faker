@@ -4,20 +4,32 @@ from models.medical_profile import MedicalProfile
 
 def main():
     selection = init_home_menu()
-    profile = MedicalProfile('', '', '', '')
+    profile = None
 
-    if selection == CREATE_PRESCRIPTION_OPT:
-        print(selection)
-    elif selection == SET_MEDICAL_PROFILE:
-        #ask for profile information
-        profile = askForProfile()
-    elif selection == MODIFY_MEDICAL_PROFILE_OPT:
-        profile.show()
-        # Ask for prop to modify
-        prop = ask_for_prop()
-        print(prop)
-    elif selection == SHOW_MEDICAL_PROFILE_OPT: 
-        profile.show()
+    menu_actions = [
+        1: CREATE_PRESCRIPTION_OPT,
+        2: SET_MEDICAL_PROFILE,
+        3: MODIFY_MEDICAL_PROFILE_OPT,
+        4: SHOW_MEDICAL_PROFILE_OPT
+    ]
+
+    while True:
+        if selection == -1:
+            continue
+        
+        if selection == 1:
+            print(selection)
+        elif selection == 2:
+            #ask for profile information
+            profile_data = askForProfile()
+            profile = MedicalProfile()
+        elif selection == 3:
+            profile.show()
+            # Ask for prop to modify
+            prop = ask_for_prop()
+            print(prop)
+        elif selection == 4: 
+            profile.show()
 
 
 
