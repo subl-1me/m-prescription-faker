@@ -3,11 +3,7 @@ from const import MAIN_MENU_SKELETON, HOME_MENU_ACTION
 import pyfiglet
 
 class Menu():
-    def __init__(self):
-        self.current_menu = "HOME" 
-
-    def show_home_menu(self):
-        self.current_menu = "HOME"
+    def show_home_menu():
         title = pyfiglet.figlet_format('Medical Prescription Faker')
         print(title)
 
@@ -81,6 +77,3 @@ class Menu():
         result = prompt(propPrompt)
         selection = result["PROP_SELECTION"]
         return selection
-
-    def process_menu_choice(choice):
-        print(choice)

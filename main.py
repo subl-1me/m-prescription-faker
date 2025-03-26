@@ -3,11 +3,10 @@ from const import  CREATE_PRESCRIPTION_OPT, SHOW_MEDICAL_PROFILE_OPT, MODIFY_MED
 from controllers.actions import Actions
 
 def main():
-    menu = Menu()
     profile = None;
 
     while True:
-        selection = menu.show_home_menu()
+        selection = Menu.show_home_menu()
         if selection == -1:
             continue
 
