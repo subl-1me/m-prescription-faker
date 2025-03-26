@@ -1,7 +1,13 @@
 from InquirerPy import prompt #type: ignore
 from const import MAIN_MENU_SKELETON, HOME_MENU_ACTION
+import pyfiglet
 
 def init_home_menu():
+
+
+    title = pyfiglet.figlet_format('Medical Prescription Faker')
+    print(title)
+
     menu = [
         {
         "type": "list",
