@@ -17,9 +17,9 @@ def main():
         elif selection == SET_MEDICAL_PROFILE:
             getattr(actions, parsedSelection)() # Set medical profile
         elif selection == MODIFY_MEDICAL_PROFILE_OPT:
-            getattr(actions, parsedSelection)()
+            getattr(actions, parsedSelection)() # Modify a profile attribute
         elif selection == SHOW_MEDICAL_PROFILE_OPT: 
-            getattr(actions, parsedSelection)()
+            getattr(actions, parsedSelection)() # Show current profile status
         else:
             print(f'\nInvalid option. Try again\n')
 
