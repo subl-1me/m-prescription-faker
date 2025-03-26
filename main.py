@@ -3,22 +3,22 @@ from const import CREATE_PRESCRIPTION_OPT, MODIFY_MEDICAL_PROFILE_OPT, SHOW_MEDI
 from models.medical_profile import MedicalProfile
 
 def main():
-    selection = init_home_menu()
     profile = None
 
-    menu_actions = [
+    menu_actions = {
         1: CREATE_PRESCRIPTION_OPT,
         2: SET_MEDICAL_PROFILE,
         3: MODIFY_MEDICAL_PROFILE_OPT,
         4: SHOW_MEDICAL_PROFILE_OPT
-    ]
+    }
 
     while True:
+        selection = init_home_menu()
         if selection == -1:
             continue
         
         if selection == 1:
-            print(selection)
+            menu_actions[selection]() # Create medical document (.word)
         elif selection == 2:
             #ask for profile information
             profile_data = askForProfile()
@@ -30,6 +30,8 @@ def main():
             print(prop)
         elif selection == 4: 
             profile.show()
+        else:
+            print(f'Invalid option.')
 
 
 
