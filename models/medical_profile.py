@@ -24,5 +24,6 @@ class MedicalProfile:
         print("Unity: " + self.unity_no);
         print("Shift: " + self.shift);
         print("----------\n")
+
     
     

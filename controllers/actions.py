@@ -1,5 +1,6 @@
 from controllers.menu import Menu
 from models.medical_profile import MedicalProfile
+from models.prescription import Prescription
 import logging
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
@@ -7,8 +8,17 @@ logger = logging.getLogger(__name__)
 class Actions:
 
     @staticmethod
-    def create_prescription():
-        logger.info('Creating document...')
+    def create_prescription(med_profile):
+        if(type(med_profile) == None):
+            return { "error": True, "message": "Please create a profile first." }
+            
+        # Select a med set
+        # create prescription
+        prescription = Prescription(med_profile, None)
+        prescription = prescription.create()
+        print(prescription)
+        return prescription
+        
 
     @staticmethod
     def set_medical_profile():
